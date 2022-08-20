@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import ButtonList from "./ButtonList";
+import Character from "./Character";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+    
+    state = {
+        characters : [
+            {
+                name: 'Darth Vader',
+                image: 'https://w7.pngwing.com/pngs/557/316/png-transparent-anakin-skywalker-palpatine-lego-minifigure-death-star-lego-star-wars-star-wars-anakin-skywalker-starwar-star-wars.png',
+                selected: false
+            },
+            {
+                name: 'Kylo Ren',
+                image: 'https://www.pngitem.com/pimgs/m/93-931978_lego-star-wars-kylo-ren-star-war-lego.png',
+                selected: false
+            },
+            
+            {
+                name: 'Yoda',
+                image: 'https://www.pngitem.com/pimgs/m/93-931978_lego-star-wars-kylo-ren-star-war-lego.png',
+                selected: false
+            },
+            {
+                name: 'Rey',
+                image: 'https://www.nicepng.com/png/full/151-1513286_rey-rey-lego.png',
+                selected: false
+            }
+            
+        ]
+    }
+    
+    render(){
+        return(
+            <div>
+                <ButtonList characters={this.state.characters} />
+                <Character/>
+            </div>
+        );
+    };
 }
 
 export default App;
