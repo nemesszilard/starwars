@@ -18,7 +18,7 @@ class App extends Component {
             },
             
             {
-                name: 'Yoda ',
+                name: 'Yoda',
                 image: 'https://www.pngitem.com/pimgs/m/93-931978_lego-star-wars-kylo-ren-star-war-lego.png',
                 selected: false
             },
