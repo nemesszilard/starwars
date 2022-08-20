@@ -5,7 +5,16 @@ class Character extends Component {
         name: null,
         image: null
     }
+
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            name: nextProps.selectedChar.name,
+            image: nextProps.selectedChar.image,
+        })
+    }
+
     render(){
+        console.log(this.props)
         return(
             <div>
                 {this.state.name && <div>

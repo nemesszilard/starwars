@@ -19,7 +19,7 @@ class App extends Component {
             
             {
                 name: 'Yoda',
-                image: 'https://www.pngitem.com/pimgs/m/93-931978_lego-star-wars-kylo-ren-star-war-lego.png',
+                image: 'https://image.pngaaa.com/768/70768-middle.png',
                 selected: false
             },
             {
@@ -30,12 +30,18 @@ class App extends Component {
             
         ]
     }
-    
+    onClickHandle = (index) =>  _=> {
+        this.setState({
+            characters: this.state.characters.map((char, charIndex) => 
+                ((charIndex === index) ? ({...char, selected: true}) : ({...char, selected: false}))
+            )
+    });
+    }
     render(){
         return(
             <div>
-                <ButtonList characters={this.state.characters} />
-                <Character/>
+                <ButtonList onClickFunc={this.onClickHandle} characters={this.state.characters} />
+                <Character selectedChar={this.state.characters.find(char => char.selected)}/>
             </div>
         );
     };

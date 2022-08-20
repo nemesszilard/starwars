@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class ButtonList extends Component {
     
 renderButton = (character, index) => {
-    return <button type="button">{character.name}</button>
+    return <button onClick={this.props.onClickFunc(index)} type="button">{character.name}</button>
 }
 
     render() {
